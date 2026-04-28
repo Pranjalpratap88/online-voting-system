@@ -1,0 +1,30 @@
+# Node (React)
+node_modules/
+build/
+dist/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+
+# Java / Spring Boot
+target/
+*.class
+*.jar
+*.war
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Sensitive config
+application.properties

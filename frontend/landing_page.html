@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Online Voting Portal | Immutable Voting Infrastructure</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#004e5f",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#31394d",
+                        "background": "#0b1326",
+                        "surface-container-lowest": "#060e20",
+                        "surface-dim": "#0b1326",
+                        "surface-container-high": "#222a3d",
+                        "outline": "#859398",
+                        "on-secondary-container": "#00622e",
+                        "on-tertiary-container": "#415167",
+                        "on-surface-variant": "#bbc9cf",
+                        "surface-container-low": "#131b2e",
+                        "secondary-fixed-dim": "#00e475",
+                        "tertiary": "#cfe0fa",
+                        "on-primary-container": "#00586b",
+                        "inverse-primary": "#00677e",
+                        "inverse-surface": "#dae2fd",
+                        "on-surface": "#dae2fd",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "surface-variant": "#2d3449",
+                        "surface-container-highest": "#2d3449",
+                        "outline-variant": "#3c494e",
+                        "tertiary-container": "#b3c4de",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "tertiary-fixed": "#d3e4fe",
+                        "surface": "#0b1326",
+                        "on-primary": "#003642",
+                        "on-primary-fixed": "#001f27",
+                        "on-background": "#dae2fd",
+                        "secondary-fixed": "#62ff96",
+                        "surface-tint": "#3cd7ff",
+                        "on-secondary-fixed": "#00210b",
+                        "primary-container": "#00d4ff",
+                        "on-secondary-fixed-variant": "#005226",
+                        "secondary-container": "#05e777",
+                        "on-tertiary": "#213145",
+                        "on-secondary": "#003918",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#171f33",
+                        "primary": "#a8e8ff",
+                        "primary-fixed-dim": "#3cd7ff",
+                        "inverse-on-surface": "#283044",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "secondary": "#7dffa2",
+                        "primary-fixed": "#b4ebff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(45, 52, 73, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopNavBar Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/80 backdrop-blur-lg shadow-[0_24px_48px_rgba(0,0,0,0.4)]">
+<div class="flex items-center justify-between px-8 py-5 max-w-[1440px] mx-auto font-['Inter'] antialiased tracking-tight">
+<div class="text-2xl font-black tracking-tighter text-white uppercase">Online Voting Portal</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#00d4ff] font-bold border-b-2 border-[#00d4ff] pb-1 transition-all" href="#">Features</a>
+<a class="text-[#bbc9cf] hover:text-white px-2 py-1 transition-colors" href="#">How it Works</a>
+<a class="text-[#bbc9cf] hover:text-white px-2 py-1 transition-colors" href="#">Security</a>
+<a class="text-[#bbc9cf] hover:text-white px-2 py-1 transition-colors" href="#">Institutions</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block text-[#bbc9cf] hover:text-white px-4 py-2 transition-all active:scale-[0.97]">Sign In</button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-lg font-bold active:scale-[0.97] transition-all">Launch Ballot</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section: The Digital Bastion -->
+<section class="relative min-h-[921px] flex items-center px-8 lg:px-24 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background to-background"></div>
+<img alt="abstract blockchain" class="w-full h-full object-cover opacity-30" data-alt="abstract digital visualization of glowing blue nodes and crystalline structures connecting in a deep navy space with ethereal light leaks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW9ham_uZawtpsn7uow7xmQ8rldpaSyfmMx3jGUzI39H0tBtCx6iv-wL2I_Asl_QIr13ePQ-w3USNT3DcfU8SGDKkLRlkCODBm4-jBb5wIdB9q6zdLrsT35v0KAWphjPwOATaoJNOeN0uEOwrqkLxqURuszlsrUY6UyJ7T-PMY0ekbj85IR3Wb1c5JFFOcelSJmdc8GDj0ye2TCyScDgkEnV8H0nsKftY_4yvPbnXFC5NQddC3JcqtHFvSieT9F6DsMnFNjSqTxxzI"/>
+</div>
+<div class="relative z-10 max-w-5xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container/10 border border-secondary/20 rounded-full mb-8">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-secondary text-xs font-bold uppercase tracking-widest">Protocol V4.0 Active</span>
+</div>
+<h1 class="text-5xl md:text-8xl font-black tracking-tighter text-white mb-6 leading-[0.9]">
+                    The Future of <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Democracy is Immutable</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
+                    Online Voting Portal leverages zero-knowledge proofs and decentralized consensus to deliver a voting platform that is cryptographically secure, mathematically verifiable, and entirely private.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-5 rounded-lg font-black text-lg active:scale-[0.97] transition-all">Launch Ballot</button>
+<button class="glass-panel text-white border border-outline-variant/30 px-10 py-5 rounded-lg font-bold hover:bg-surface-container-high transition-all">Explore Architecture</button>
+</div>
+</div>
+</section>
+<!-- Stats: Tonal Architecture -->
+<section class="px-8 lg:px-24 py-12">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/5">
+<p class="text-on-surface-variant text-sm font-bold uppercase tracking-widest mb-2">Total Volume</p>
+<h3 class="text-4xl font-black text-white">12.4M</h3>
+<p class="text-primary text-sm font-medium mt-1">Votes Secured Permanently</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/5">
+<p class="text-on-surface-variant text-sm font-bold uppercase tracking-widest mb-2">Integrity Factor</p>
+<h3 class="text-4xl font-black text-white">100%</h3>
+<p class="text-secondary text-sm font-medium mt-1">Zero Breach History</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/5">
+<p class="text-on-surface-variant text-sm font-bold uppercase tracking-widest mb-2">Network Nodes</p>
+<h3 class="text-4xl font-black text-white">8.2k+</h3>
+<p class="text-primary text-sm font-medium mt-1">Decentralized Validators</p>
+</div>
+</div>
+</section>
+<!-- Features Section: Glassmorphism Bento -->
+<section class="px-8 lg:px-24 py-24 bg-surface-container-lowest">
+<div class="mb-16">
+<h2 class="text-sm font-bold text-primary tracking-[0.3em] uppercase mb-4">Core Principles</h2>
+<h3 class="text-4xl font-black text-white tracking-tight">Engineered for Absolute Trust</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="md:col-span-8 glass-panel rounded-xl p-10 relative overflow-hidden group">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">security</span>
+<h4 class="text-2xl font-bold text-white mb-4">Cryptographic Integrity</h4>
+<p class="text-on-surface-variant max-w-md">Every ballot is cryptographically signed and hashed, creating a permanent audit trail that cannot be altered or deleted by any central authority.</p>
+</div>
+<img alt="security background" class="absolute right-0 bottom-0 w-1/2 opacity-20 group-hover:scale-105 transition-transform duration-700" data-alt="macro view of server rack cooling fans and glowing blue indicators in a dark data center environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz24OqlLCGPr-KOETrARu5VNtFe2xKa09waz1PQduTXXnzxH2JXHGRQqSeNxo16BVoK64Bq3l6qMh7Ffim74iqxVFkFbGJyIDUwj0D4sMqwdWWCTo_Ghz7CrOSEI3ydkKpclf2oCNt4PbS6CHCZrtfdBEn8uzhRgM6tB4caEYzO8oo-BNSVzhhvj9RIL4a7CAX05iTensuQo-6MCLSgtQYKU777zsnrkW3pE89wHVX5CVyqps3coGE1vzsV_7k8QELy5vlTIY6Tp24"/>
+</div>
+<div class="md:col-span-4 bg-surface-container-high rounded-xl p-10">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">visibility_off</span>
+<h4 class="text-2xl font-bold text-white mb-4">Zero-Knowledge Privacy</h4>
+<p class="text-on-surface-variant">Verify the validity of a vote without ever revealing the voter's identity or their specific selection. Mathematical privacy at scale.</p>
+</div>
+<div class="md:col-span-5 bg-surface-container-high rounded-xl p-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">update</span>
+<h4 class="text-2xl font-bold text-white mb-4">Real-time Transparency</h4>
+<p class="text-on-surface-variant">Watch the ledger update in real-time. Public observers can track network health and block finality through our open explorer.</p>
+</div>
+<div class="md:col-span-7 glass-panel rounded-xl p-10 relative overflow-hidden">
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<h4 class="text-2xl font-bold text-white mb-4">Quantum-Resistant Layer</h4>
+<p class="text-on-surface-variant max-w-sm">Built on lattice-based cryptography to ensure votes remain secure even against next-generation computing threats.</p>
+</div>
+<div class="mt-8 flex gap-2">
+<div class="w-12 h-1 bg-primary rounded-full"></div>
+<div class="w-8 h-1 bg-surface-variant rounded-full"></div>
+<div class="w-8 h-1 bg-surface-variant rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How it Works: Step-by-Step Tonal Hierarchy -->
+<section class="px-8 lg:px-24 py-32 bg-surface">
+<div class="flex flex-col lg:flex-row gap-16">
+<div class="lg:w-1/3">
+<h2 class="text-5xl font-black text-white tracking-tighter mb-8 leading-tight">The Path to <br/>Verification</h2>
+<p class="text-on-surface-variant mb-8">Four steps to absolute certainty. Our protocol eliminates the 'black box' of traditional voting systems.</p>
+<button class="text-primary font-bold inline-flex items-center gap-2 hover:gap-4 transition-all">
+                        Read Whitepaper <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="lg:w-2/3 space-y-12">
+<div class="flex gap-8 group">
+<div class="flex-shrink-0 w-16 h-16 rounded-xl bg-surface-container-low flex items-center justify-center group-hover:bg-primary-container/20 transition-colors">
+<span class="text-2xl font-black text-primary">01</span>
+</div>
+<div>
+<h5 class="text-xl font-bold text-white mb-2">Identity Attestation</h5>
+<p class="text-on-surface-variant leading-relaxed">Voters use biometric or sovereign IDs to generate a unique, non-reversible cryptographic key on their local device.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<div class="flex-shrink-0 w-16 h-16 rounded-xl bg-surface-container-low flex items-center justify-center group-hover:bg-primary-container/20 transition-colors">
+<span class="text-2xl font-black text-primary">02</span>
+</div>
+<div>
+<h5 class="text-xl font-bold text-white mb-2">Encrypted Casting</h5>
+<p class="text-on-surface-variant leading-relaxed">The ballot is homomorphically encrypted. The system can count the vote without ever decrypting it, preserving total secrecy.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<div class="flex-shrink-0 w-16 h-16 rounded-xl bg-surface-container-low flex items-center justify-center group-hover:bg-primary-container/20 transition-colors">
+<span class="text-2xl font-black text-primary">03</span>
+</div>
+<div>
+<h5 class="text-xl font-bold text-white mb-2">Consensus Validation</h5>
+<p class="text-on-surface-variant leading-relaxed">Global nodes verify the cryptographic proof of the vote's validity before appending it to the immutable ledger.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Institutions Section: High-End Editorial -->
+<section class="px-8 lg:px-24 py-24 bg-surface-container-low">
+<div class="text-center mb-16">
+<h2 class="text-sm font-bold text-on-surface-variant tracking-[0.4em] uppercase mb-4">Trusted Institutions</h2>
+<div class="w-24 h-px bg-outline-variant/30 mx-auto"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+<div class="flex flex-col items-center gap-4">
+<div class="text-xl font-black tracking-widest text-white">NORDIC COUNCIL</div>
+<div class="text-[10px] text-primary tracking-[0.2em] font-bold">CERTIFIED PARTNER</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="text-xl font-black tracking-widest text-white">GENEVA GROUP</div>
+<div class="text-[10px] text-primary tracking-[0.2em] font-bold">SECURITY AUDIT</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="text-xl font-black tracking-widest text-white">PACIFIC ALLIANCE</div>
+<div class="text-[10px] text-primary tracking-[0.2em] font-bold">GOVERNANCE NODE</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="text-xl font-black tracking-widest text-white">ETHEREUM FOUNDATION</div>
+<div class="text-[10px] text-primary tracking-[0.2em] font-bold">ECOSYSTEM GRANT</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-8 lg:px-24 py-32">
+<div class="bg-gradient-to-br from-surface-container-low to-surface-container-highest rounded-2xl p-12 md:p-24 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 blur-[100px] -ml-32 -mb-32"></div>
+<h2 class="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter relative z-10">Deploy Sovereignty Today.</h2>
+<p class="text-on-surface-variant text-lg max-w-xl mx-auto mb-12 relative z-10">Whether for municipal elections or corporate governance, Online Voting Portal provides the infrastructure for unshakeable trust.</p>
+<div class="flex flex-wrap justify-center gap-4 relative z-10">
+<button class="bg-secondary text-on-secondary px-10 py-5 rounded-lg font-black text-lg active:scale-[0.97] transition-all">Execute Demo</button>
+<button class="bg-white/5 text-white px-10 py-5 rounded-lg font-bold hover:bg-white/10 transition-all">Contact Sales</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Navigation Shell -->
+<footer class="bg-[#060e20] border-t border-[#3c494e]/15">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto w-full py-12 px-8">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="text-lg font-bold text-white">Online Voting Portal</div>
+<p class="font-['Inter'] text-sm uppercase tracking-widest text-[#bbc9cf]/60">© 2024 Online Voting Portal. Built on Immutable Architecture.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Inter'] text-sm uppercase tracking-widest text-[#bbc9cf]/60 hover:text-[#a8e8ff] hover:translate-x-1 transition-transform" href="#">Privacy Protocol</a>
+<a class="font-['Inter'] text-sm uppercase tracking-widest text-[#bbc9cf]/60 hover:text-[#a8e8ff] hover:translate-x-1 transition-transform" href="#">Security Whitepaper</a>
+<a class="font-['Inter'] text-sm uppercase tracking-widest text-[#bbc9cf]/60 hover:text-[#a8e8ff] hover:translate-x-1 transition-transform" href="#">Compliance</a>
+<a class="font-['Inter'] text-sm uppercase tracking-widest text-[#bbc9cf]/60 hover:text-[#a8e8ff] hover:translate-x-1 transition-transform" href="#">Contact Guard</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#00d4ff] text-xl cursor-pointer hover:scale-110 transition-transform">hub</span>
+<span class="material-symbols-outlined text-[#00d4ff] text-xl cursor-pointer hover:scale-110 transition-transform">language</span>
+<span class="material-symbols-outlined text-[#00d4ff] text-xl cursor-pointer hover:scale-110 transition-transform">shield</span>
+</div>
+</div>
+</footer>
+</body></html>

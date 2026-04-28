@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(45, 52, 73, 0.6);
+    backdrop-filter: blur(20px);
+  }
+}
+
+/* Make datetime-local calendar icon visible and styled */
+input[type="datetime-local"] {
+  position: relative;
+  color-scheme: dark;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(1.5);
+  cursor: pointer;
+  opacity: 0.9;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  background: rgba(60, 215, 255, 0.1);
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+  background: rgba(60, 215, 255, 0.2);
+  transform: scale(1.1);
+}
+
+input[type="datetime-local"]:focus::-webkit-calendar-picker-indicator {
+  background: rgba(60, 215, 255, 0.25);
+}

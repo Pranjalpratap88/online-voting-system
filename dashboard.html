@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sovereign Ledger | Voter Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#b4ebff",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#00e475",
+                        "on-primary-fixed-variant": "#004e5f",
+                        "surface-container-high": "#222a3d",
+                        "primary-container": "#00d4ff",
+                        "on-secondary": "#003918",
+                        "outline": "#859398",
+                        "surface-bright": "#31394d",
+                        "primary-fixed-dim": "#3cd7ff",
+                        "tertiary": "#cfe0fa",
+                        "surface-tint": "#3cd7ff",
+                        "on-secondary-fixed-variant": "#005226",
+                        "inverse-primary": "#00677e",
+                        "secondary-fixed": "#62ff96",
+                        "on-secondary-container": "#00622e",
+                        "on-primary-fixed": "#001f27",
+                        "tertiary-fixed": "#d3e4fe",
+                        "surface-variant": "#2d3449",
+                        "on-background": "#dae2fd",
+                        "surface-container-low": "#131b2e",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-surface": "#dae2fd",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "secondary-container": "#05e777",
+                        "surface-container-highest": "#2d3449",
+                        "surface-container": "#171f33",
+                        "surface-container-lowest": "#060e20",
+                        "inverse-surface": "#dae2fd",
+                        "on-tertiary-container": "#415167",
+                        "on-error": "#690005",
+                        "on-primary": "#003642",
+                        "surface-dim": "#0b1326",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed": "#00210b",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "outline-variant": "#3c494e",
+                        "background": "#0b1326",
+                        "on-surface-variant": "#bbc9cf",
+                        "inverse-on-surface": "#283044",
+                        "primary": "#a8e8ff",
+                        "on-tertiary": "#213145",
+                        "surface": "#0b1326",
+                        "tertiary-container": "#b3c4de",
+                        "secondary": "#7dffa2",
+                        "on-primary-container": "#00586b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Sidebar Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-6 gap-2 dark:bg-[#131b2e] h-screen w-72 z-50">
+<div class="mb-10 px-4">
+<h1 class="dark:text-[#a8e8ff] text-lg font-black tracking-widest">SOVEREIGN</h1>
+<p class="font-inter uppercase text-[11px] tracking-[0.15em] font-bold dark:text-[#00d4ff]">Fortified Ledger</p>
+</div>
+<nav class="flex flex-col gap-2 grow">
+<a class="dark:text-[#00d4ff] dark:bg-[#171f33] rounded-md px-4 py-3 flex items-center gap-3 transition-all duration-500 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter uppercase text-[11px] tracking-[0.15em] font-bold">Dashboard</span>
+</a>
+<a class="dark:text-[#bbc9cf] px-4 py-3 flex items-center gap-3 opacity-60 hover:dark:bg-[#171f33] hover:opacity-100 transition-opacity duration-500 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="how_to_vote">how_to_vote</span>
+<span class="font-inter uppercase text-[11px] tracking-[0.15em] font-bold">Vote Center</span>
+</a>
+<a class="dark:text-[#bbc9cf] px-4 py-3 flex items-center gap-3 opacity-60 hover:dark:bg-[#171f33] hover:opacity-100 transition-opacity duration-500 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="enhanced_encryption">enhanced_encryption</span>
+<span class="font-inter uppercase text-[11px] tracking-[0.15em] font-bold">Verification</span>
+</a>
+<a class="dark:text-[#bbc9cf] px-4 py-3 flex items-center gap-3 opacity-60 hover:dark:bg-[#171f33] hover:opacity-100 transition-opacity duration-500 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter uppercase text-[11px] tracking-[0.15em] font-bold">Settings</span>
+</a>
+</nav>
+<div class="mt-auto">
+<button class="w-full bg-primary-container text-on-primary-container font-bold py-3 rounded-md active:scale-95 transition-all duration-300">
+                View Ledger Proof
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-72 min-h-screen p-10 flex flex-col gap-12">
+<!-- Top App Bar Content (Embedded in Main Canvas) -->
+<header class="flex justify-between items-center w-full">
+<div class="flex flex-col">
+<h2 class="text-4xl font-black tracking-tighter text-primary">Sovereign Ledger</h2>
+<p class="text-on-surface-variant font-medium tracking-tight">System Status: Integrity Validated</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined p-2 rounded-full hover:bg-surface-container transition-colors cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined p-2 rounded-full hover:bg-surface-container transition-colors cursor-pointer text-secondary" data-icon="verified_user">verified_user</span>
+</div>
+<img alt="User Profile Avatar" class="w-12 h-12 rounded-full border-2 border-primary/20 shadow-lg shadow-black/40" data-alt="portrait of a professional male in his 30s with a clean haircut, soft studio lighting, neutral background, high resolution" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA69uG9z9dldmsc7Gkl6h7rC4de2IIkFNsmgqzCyFoaHlzsxsLowbrAs4EJTml5TKSOwKw2L1zT2IfUOTrdSxEIMELT59oAm6SYJGlyDxQOFT1uKXO2O5gVulvXt4f1OUAmynZ58APIYzqFvg86WXA9zCp2G2NCciIeFgD5IkhkIkqCRZEPKJAXdUfWWVwKb1Dm7MM_ZDt9R4YX7MaJ6XCc-hq20XtxCVSBaZZ_gmXaTmhpEg7JUPRFor4-aXkjUPc-5gyE_pr7annF"/>
+</div>
+</header>
+<!-- Welcome & Trust Score Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 p-10 rounded-xl bg-surface-container relative overflow-hidden flex flex-col justify-between min-h-[300px]">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
+<div class="relative z-10">
+<p class="text-primary-fixed font-bold tracking-widest text-xs uppercase mb-2">Authenticated Session</p>
+<h3 class="text-5xl font-black tracking-tighter text-on-surface mb-4">Welcome, Adrian Vane.</h3>
+<p class="text-on-surface-variant max-w-md text-lg leading-relaxed">Your sovereign identity is secured by the latest cryptographic protocols. Access your active ballots below.</p>
+</div>
+<div class="flex gap-4 relative z-10">
+<button class="px-6 py-3 bg-secondary text-on-secondary font-bold rounded-md hover:brightness-110 active:scale-95 transition-all">Audit My Identity</button>
+<button class="px-6 py-3 bg-surface-container-highest text-primary font-bold rounded-md hover:bg-surface-bright active:scale-95 transition-all">View Keys</button>
+</div>
+</div>
+<div class="p-8 rounded-xl bg-surface-container-low flex flex-col items-center justify-center text-center gap-4 relative">
+<!-- Circular Progress Mockup -->
+<div class="w-40 h-40 rounded-full border-4 border-surface-container-highest flex items-center justify-center relative">
+<div class="absolute inset-0 rounded-full border-4 border-secondary border-r-transparent border-b-transparent rotate-45"></div>
+<div class="flex flex-col items-center">
+<span class="text-3xl font-black text-secondary">99.8%</span>
+<span class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Score</span>
+</div>
+</div>
+<div>
+<h4 class="text-xl font-bold text-on-surface">Trust Score</h4>
+<p class="text-xs text-on-surface-variant mt-1">Institutional Grade Verification</p>
+</div>
+<div class="mt-2 bg-on-secondary-container/10 px-4 py-1 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[10px] font-black text-secondary uppercase tracking-widest">FORTIFIED</span>
+</div>
+</div>
+</section>
+<!-- Active Ballots (Bento Grid Style) -->
+<section>
+<div class="flex items-end justify-between mb-8">
+<h3 class="text-3xl font-black tracking-tighter text-primary">Active Ballots</h3>
+<a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors pb-1 border-b border-outline-variant" href="#">View all elections</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Ballot Card 1 -->
+<div class="group p-8 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-500 flex flex-col gap-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-9xl" data-icon="account_balance">account_balance</span>
+</div>
+<div class="flex justify-between items-start">
+<div class="p-3 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-primary-container" data-icon="gavel">gavel</span>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-black text-error uppercase tracking-widest">Ends In</p>
+<p class="text-xl font-mono text-on-surface">14:22:08</p>
+</div>
+</div>
+<div>
+<h4 class="text-2xl font-bold text-on-surface mb-2">2024 Global Council Referendum</h4>
+<p class="text-on-surface-variant text-sm">Amendment 42: Decentralized Resource Allocation Protocols.</p>
+</div>
+<div class="mt-auto pt-6 border-t border-outline-variant/10 flex items-center justify-between">
+<span class="text-xs text-on-tertiary-container font-medium">Digital Signature Required</span>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold px-6 py-2 rounded-md active:scale-95 transition-all">Enter Booth</button>
+</div>
+</div>
+<!-- Ballot Card 2 -->
+<div class="group p-8 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all duration-500 flex flex-col gap-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-9xl" data-icon="security">security</span>
+</div>
+<div class="flex justify-between items-start">
+<div class="p-3 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-primary-container" data-icon="token">token</span>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-black text-primary uppercase tracking-widest">Ends In</p>
+<p class="text-xl font-mono text-on-surface">02:45:12</p>
+</div>
+</div>
+<div>
+<h4 class="text-2xl font-bold text-on-surface mb-2">Validator Node Election</h4>
+<p class="text-on-surface-variant text-sm">Selection of top-tier institutional nodes for Epoch 442.</p>
+</div>
+<div class="mt-auto pt-6 border-t border-outline-variant/10 flex items-center justify-between">
+<span class="text-xs text-on-tertiary-container font-medium">Multi-Sig Enabled</span>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold px-6 py-2 rounded-md active:scale-95 transition-all">Enter Booth</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Results Section -->
+<section>
+<h3 class="text-3xl font-black tracking-tighter text-primary mb-8">Recent Results</h3>
+<div class="rounded-xl overflow-hidden bg-surface-container-lowest">
+<div class="grid grid-cols-12 p-4 text-[10px] font-black uppercase tracking-[0.2em] text-on-surface-variant border-b border-outline-variant/10">
+<div class="col-span-5 px-4">Election Title</div>
+<div class="col-span-3 px-4">Closing Timestamp</div>
+<div class="col-span-2 px-4">Turnout</div>
+<div class="col-span-2 px-4 text-right">Status</div>
+</div>
+<!-- Result Item 1 -->
+<div class="grid grid-cols-12 p-6 items-center hover:bg-surface-container transition-colors duration-200 group">
+<div class="col-span-5 px-4 flex items-center gap-4">
+<div class="w-10 h-10 rounded-md bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</div>
+<span class="font-bold text-on-surface group-hover:text-primary transition-colors">Infrastructure Bond Act B</span>
+</div>
+<div class="col-span-3 px-4 font-mono text-xs text-on-surface-variant">2024-05-12 23:59:59 UTC</div>
+<div class="col-span-2 px-4 text-on-surface font-medium">88.4%</div>
+<div class="col-span-2 px-4 text-right">
+<span class="px-3 py-1 bg-on-secondary-container/10 text-secondary text-[10px] font-black uppercase rounded-full">Passed</span>
+</div>
+</div>
+<!-- Result Item 2 -->
+<div class="grid grid-cols-12 p-6 items-center hover:bg-surface-container transition-colors duration-200 group">
+<div class="col-span-5 px-4 flex items-center gap-4">
+<div class="w-10 h-10 rounded-md bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="policy">policy</span>
+</div>
+<span class="font-bold text-on-surface group-hover:text-primary transition-colors">Data Privacy Protocol v2</span>
+</div>
+<div class="col-span-3 px-4 font-mono text-xs text-on-surface-variant">2024-05-10 18:00:00 UTC</div>
+<div class="col-span-2 px-4 text-on-surface font-medium">94.1%</div>
+<div class="col-span-2 px-4 text-right">
+<span class="px-3 py-1 bg-on-secondary-container/10 text-secondary text-[10px] font-black uppercase rounded-full">Passed</span>
+</div>
+</div>
+<!-- Result Item 3 -->
+<div class="grid grid-cols-12 p-6 items-center hover:bg-surface-container transition-colors duration-200 group">
+<div class="col-span-5 px-4 flex items-center gap-4">
+<div class="w-10 h-10 rounded-md bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+</div>
+<span class="font-bold text-on-surface group-hover:text-primary transition-colors">By-Law Revision #88</span>
+</div>
+<div class="col-span-3 px-4 font-mono text-xs text-on-surface-variant">2024-05-08 12:00:00 UTC</div>
+<div class="col-span-2 px-4 text-on-surface font-medium">42.5%</div>
+<div class="col-span-2 px-4 text-right">
+<span class="px-3 py-1 bg-error-container/20 text-error text-[10px] font-black uppercase rounded-full">Rejected</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Shell -->
+<footer class="mt-12 flex flex-col items-center justify-center text-center gap-8 w-full full-width py-16 dark:bg-[#060e20]">
+<div class="h-[1px] w-full max-w-4xl dark:bg-[#0b1326]"></div>
+<div class="flex gap-8">
+<a class="font-inter text-xs tracking-wide dark:text-[#bbc9cf] opacity-50 hover:opacity-100 dark:hover:text-[#a8e8ff] transition-opacity duration-200" href="#">Integrity Protocol</a>
+<a class="font-inter text-xs tracking-wide dark:text-[#bbc9cf] opacity-50 hover:opacity-100 dark:hover:text-[#a8e8ff] transition-opacity duration-200" href="#">Whitepaper</a>
+<a class="font-inter text-xs tracking-wide dark:text-[#bbc9cf] opacity-50 hover:opacity-100 dark:hover:text-[#a8e8ff] transition-opacity duration-200" href="#">Node Status</a>
+</div>
+<div class="flex flex-col gap-2">
+<p class="font-inter text-xs tracking-wide dark:text-[#bbc9cf] opacity-50">© 2024 Sovereign Institutional Ledger. Cryptographically Secured.</p>
+<div class="flex items-center justify-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(125,255,162,0.6)]"></div>
+<span class="text-[10px] font-black tracking-widest text-secondary uppercase">All Systems Operational</span>
+</div>
+</div>
+</footer>
+</main>
+</body></html>
