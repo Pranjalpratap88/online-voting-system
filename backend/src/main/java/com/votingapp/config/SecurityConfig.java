@@ -89,14 +89,14 @@ public class SecurityConfig {
         } else {
             configuration.setAllowedOrigins(List.of(
                 "http://localhost:5173", 
-                "http://127.0.0.1:5173", 
-                "http://localhost:5174", 
-                "http://127.0.0.1:5174"
+                "http://127.0.0.1:5173",
+                "https://online-voting-system-nu-wheat.vercel.app"
             ));
         }
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-Requested-With", "Accept", "Origin"));
+        configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
+        configuration.setMaxAge(3600L); // Cache preflight for 1 hour
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
